@@ -1,0 +1,115 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.description {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.description a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+.courseCard {
+  display: flex;
+  color: rgb(59 59 59);
+  border-bottom: 1px solid lightgrey;
+  padding: 16px 0;
+  font-size: 14px;
+
+  .courseInfo {
+    padding: 0 20px;
+    flex: 1;
+
+    .courseTitle {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .courseDescription {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .courseAuthor {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+    }
+
+    .courseRating {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: orange;
+      margin-right: 4px;
+    }
+
+    .courseRatingCount {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+      margin-left: 4px;
+    }
+
+    .courseNoRating {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+    }
+
+    .courseDuration {
+      font-size: 10px;
+      color: gray;
+    }
+  }
+
+  .courseDiscountedPrice {
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-align: right;
+  }
+
+  .coursePrice {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 12px;
+    text-align: right;
+  }
+}

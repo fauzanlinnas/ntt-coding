@@ -1,0 +1,85 @@
+.backButton {
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.courseCard {
+  display: flex;
+  color: rgb(59 59 59);
+  padding: 16px;
+  font-size: 14px;
+
+  .courseInfo {
+    padding: 0 20px;
+    flex: 1;
+
+    .courseTitle {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .courseDescription {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .courseAuthor {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+    }
+
+    .courseRating {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: orange;
+      margin-right: 4px;
+    }
+
+    .courseRatingCount {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+      margin-left: 4px;
+    }
+
+    .courseNoRating {
+      font-size: 10px;
+      margin-bottom: 4px;
+      color: gray;
+    }
+
+    .courseDuration {
+      font-size: 10px;
+      color: gray;
+    }
+  }
+
+  .courseDiscountedPrice {
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-align: right;
+  }
+
+  .coursePrice {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .heartIcon {
+    margin: 8px;
+    color: white;
+    stroke: #646464;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    // filter: drop-shadow(-1px -1px 0px #9c9c9c) drop-shadow(2px -1px 0px #9c9c9c)
+    //   drop-shadow(2px 2px 0px #9c9c9c) drop-shadow(-1px 2px 0px #9c9c9c);
+
+    &.active {
+      color: red;
+      stroke: red;
+    }
+  }
+}
