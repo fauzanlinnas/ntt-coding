@@ -7,7 +7,7 @@ const coursesSlice = createSlice({
     renderedList: [],
     currentPage: 1,
     itemsPerPage: 5,
-    sortBy: "asc", // 'asc' or 'desc',
+    sortBy: "", // 'asc' or 'desc',
     wishlist: [],
   },
   reducers: {

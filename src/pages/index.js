@@ -13,25 +13,15 @@ import Pagination from "@/components/Pagination";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Home = () => {
+const Home = ({ initialCourses }) => {
   const dispatch = useDispatch();
   const { courseList, renderedList, currentPage, itemsPerPage, sortBy } = useSelector(
     (state) => state.courses
   );
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await api.get("/courses.json");
-        const coursesData = response.data;
-        dispatch(setCourse(coursesData));
-        dispatch(setCurrentPage(1));
-      } catch (error) {
-        console.error("Error fetching courses:", error);
-      }
-    };
-
-    if (courseList.length <= 0) fetchCourses();
+    dispatch(setCourse(initialCourses));
+    dispatch(setCurrentPage(1));
   }, [dispatch]);
 
   const handlePageChange = (newPage) => {
@@ -48,6 +38,7 @@ const Home = () => {
       <Head>
         <title>NTT Coding Home</title>
         <meta name="description" content="NextJS project for NTT assignment" />
+        <meta name="keywords" content="Kursus, Mikrotik, Javascript" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -77,3 +68,14 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+  try {
+    const response = await api.get("/courses.json");
+    const initialCourses = response.data;
+    return { props: { initialCourses } };
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return { props: { initialCourses: [] } };
+  }
+};

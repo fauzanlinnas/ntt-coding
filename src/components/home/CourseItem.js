@@ -5,6 +5,13 @@ import styles from "@/styles/Home.module.scss";
 import StarRatings from "react-star-ratings";
 import { PriceToIDR } from "@/utils/priceFormatter";
 
+const isProductNew = (createdAt) => {
+  const productDate = new Date(createdAt);
+  const now = new Date();
+  const oneWeekAgo = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7);
+  return productDate >= oneWeekAgo;
+};
+
 const CourseItem = ({ itemData }) => {
   return (
     <div className={styles.courseCard}>
@@ -34,6 +41,15 @@ const CourseItem = ({ itemData }) => {
         <p className={styles.courseDuration}>
           {itemData.totalDuration} total jam • {itemData.totalMaterial} • {itemData.difficultyLevel}
         </p>
+        <div className={styles.labels}>
+          {isProductNew(itemData.createdAt) && <span className={styles.labelNew}>NEW</span>}
+          {itemData.rating > 4 && itemData.ratingCount > 20 && (
+            <span className={styles.labelBestSeller}>BEST SELLER</span>
+          )}
+          {isProductNew(itemData.createdAt) && itemData.rating > 4 && itemData.ratingCount > 20 && (
+            <span className={styles.labelHotLesson}>Hot Lesson</span>
+          )}
+        </div>
       </div>
 
       <div>

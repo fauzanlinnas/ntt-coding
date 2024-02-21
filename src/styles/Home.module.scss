@@ -112,4 +112,34 @@
     font-size: 12px;
     text-align: right;
   }
+
+  .labels {
+    margin-top: 4px;
+
+    .labelNew {
+      padding: 2px 4px;
+      margin-right: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: yellow;
+    }
+
+    .labelBestSeller {
+      padding: 2px 4px;
+      margin-right: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: green;
+      color: white;
+    }
+
+    .labelHotLesson {
+      padding: 2px 4px;
+      margin-right: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: red;
+      color: white;
+    }
+  }
 }
