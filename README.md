@@ -1,5 +1,9 @@
 ## Getting Started
 
+Prerequisite:
+
+- create `.env.local` with the value the same as `.env.local.example`
+
 First, install dependencies:
 
 ```bash
